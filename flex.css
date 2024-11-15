@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	font-family: "Montserrat";
+	font-size: 1.3rem;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	padding: 10px;
+	background-color: rgb(217, 217, 217);
+}
+
+/* justify-content controls where the flex items sit on the main axis. */
+/* The align-items property controls where the flex items sit on the cross axis. */
+
+main {
+	flex-grow: 1;
+	display: flex;
+	/* the value declared later (top -> down) is used, the previous one is overwritten */
+	/* flex-direction: column; */
+	 flex-direction: row; 
+	 justify-content: center;
+	/* align-items: center; */
+}
+
+main p {
+	margin: 20px 10px;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: rgb(251, 240, 255);
+	/*  unitless proportion value that dictates how much available space along the main axis each flex item will take up compared to other flex items. */
+	/*flex: 1;
+}

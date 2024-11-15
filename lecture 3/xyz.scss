@@ -1,0 +1,13 @@
+$background:rgb(200, 35, 162);
+body{
+    background-color: $background;
+
+    p, nav{
+        color:white;
+        a{
+            text-decoration: none;
+
+        }
+        
+    }
+}

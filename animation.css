@@ -1,0 +1,179 @@
+body {
+	margin: 0;
+	font-family: "Montserrat";
+	font-size: 1.3rem;
+	height: 200vh;
+}
+
+nav {
+	padding: 10px;
+	background-color: rgb(217, 217, 217);
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	padding: 0 20px;
+}
+
+/* Section 1: Basic Transitions */
+/* Transitions smoothly animate a change in a property from one state to another. */
+
+.button {
+	background-color: #4caf50; /* Green */
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Smooth transition of background color */
+}
+
+.button:hover {
+	background-color: #176c1b; /* Darker green on hover */
+}
+
+/* Section 2: Transforming Elements with Transitions */
+/* Transformations like scale and rotate can be animated with transitions as well. */
+
+.cross {
+	margin-left: 50px;
+	font-size: 3rem;
+	display: inline-block;
+	transition: transform 0.5s ease; /* Smooth transition of the transform property */
+}
+
+.cross:hover {
+	transform: scale(1.5) rotate(30deg); /* Scales and rotates on hover */
+}
+
+/* Section 3: Basic Keyframe Animation */
+/* Keyframes allow creating complex animations with multiple stages. */
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: rotate(0);
+	}
+	20% {
+		transform: rotate(30deg);
+	}
+	40% {
+		transform: rotate(0);
+	}
+	60% {
+		transform: rotate(30deg);
+	}
+	100% {
+		transform: rotate(0);
+	}
+}
+
+.wave {
+	font-size: 3rem;
+	display: inline-block;
+	transform-origin: 100% 100%;
+	animation: wave 1s ease infinite;
+}
+
+.bouncing-box {
+	width: 100px;
+	height: 100px;
+	background-color: #ff6347; /* Tomato color */
+	animation-name: bounce;
+	animation-duration: 1s;
+	animation-iteration-count: infinite; /* Loops indefinitely */
+}
+
+/* Section 4: Animation Properties Explained */
+/* Here, we specify all essential animation properties on a single element. */
+
+.spinner {
+	width: 50px;
+	height: 50px;
+	background-color: #333;
+	margin: 20px auto;
+	animation-name: spin;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate; /* Runs forward and then in reverse */
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Section 5: Using Multiple Keyframes in a Single Animation */
+
+@keyframes colorChange {
+	0% {
+		background-color: #ff6347; /* Tomato */
+	}
+	25% {
+		background-color: #4caf50; /* Green */
+	}
+	50% {
+		background-color: #1e90ff; /* Dodger Blue */
+	}
+	75% {
+		background-color: #ffd700; /* Gold */
+	}
+	100% {
+		background-color: #ff6347; /* Tomato (loops back) */
+	}
+}
+
+.color-box {
+	width: 100px;
+	height: 100px;
+	animation-name: colorChange;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+/* Section 6: Combining Animations */
+/* Multiple animations can be applied to one element */
+
+@keyframes moveRight {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(100px);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.moving-fading-box {
+	width: 100px;
+	height: 100px;
+	background-color: #1e90ff;
+	animation: moveRight 2s ease-in-out 0s infinite alternate,
+		fadeOut 2s ease-in-out 0s infinite alternate;
+	/* Combining two animations with shorthand syntax */
+}
